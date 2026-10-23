@@ -1,0 +1,66 @@
+@define-color bg #1e1e1e;
+@define-color btnhover #dddddd;
+
+/* Make the bar itself transparent */
+window#waybar,
+window#waybar.empty,
+window#waybar.solo {
+    background: transparent;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Make the left/center/right containers transparent too */
+.modules-left,
+.modules-center,
+.modules-right {
+    background: @bg;
+    margin: 0px 10px;
+    margin-top: 4px;
+    border-radius: 24px
+}
+
+/* Common widget spacing */
+#workspaces,
+#backlight,
+#pulseaudio,
+#temperature,
+#memory,
+#battery,
+#custom-power,
+#clock,
+#bluetooth,
+#tray {
+    color: @text;
+    background: @bg;
+    border-radius: 10px;
+    padding: 0px 16px;
+    margin: 2px 3px;
+}
+
+/* Workspaces */
+#workspaces {
+    padding: 1px 5px;
+}
+
+#workspaces button {
+    background: @bg;
+    color: @text;
+    padding: 1px 8px;
+    margin: 0 2px;
+    border-radius: 8px;
+}
+
+#workspaces button:hover {
+    background: @btnhover;
+}
+
+#workspaces button.active {
+    background: @btnhover;
+    padding: 1px 20px;
+    color: @bg;
+    font-weight: bold;
+}
