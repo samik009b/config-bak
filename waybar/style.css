@@ -1,29 +1,32 @@
 @define-color bg #1e1e1e;
 @define-color btnhover #dddddd;
 
-/* Make the bar itself transparent */
+/* Transparent Waybar window */
 window#waybar,
 window#waybar.empty,
 window#waybar.solo {
     background: transparent;
-    background-color: transparent;
     border: none;
     box-shadow: none;
     font-size: 14px;
     font-weight: 500;
 }
 
-/* Make the left/center/right containers transparent too */
-.modules-left,
+/* Transparent section containers */
+.modules-left {
+    background: transparent;
+    margin: 0px 10px;
+    margin-top: 4px;
+}
+
 .modules-center,
 .modules-right {
     background: @bg;
-    margin: 0px 10px;
-    margin-top: 4px;
+    margin: 4px 10px;
     border-radius: 24px
 }
 
-/* Common widget spacing */
+/* Common widget styling */
 #workspaces,
 #backlight,
 #pulseaudio,
@@ -31,21 +34,52 @@ window#waybar.solo {
 #memory,
 #battery,
 #custom-power,
+#custom-web,
+#custom-file,
 #clock,
 #bluetooth,
 #tray {
     color: @text;
     background: @bg;
-    border-radius: 10px;
-    padding: 0px 16px;
-    margin: 2px 3px;
+    padding: 0 16px;
+    margin: 2px 0;
 }
 
-/* Workspaces */
+/* Group: workspaces + memory + temperature */
 #workspaces {
+    border-radius: 24px 0 0 24px;
     padding: 1px 5px;
 }
 
+#memory {
+    border-radius: 0;
+}
+
+#temperature {
+    border-radius: 0 24px 24px 0;
+}
+
+/* Independent web and file capsules */
+#custom-web,
+#custom-file {
+    border-radius: 24px;
+    padding: 0 10px;
+    margin: 2px 5px;
+}
+
+/* Other widgets retain individual capsules */
+#backlight,
+#pulseaudio,
+#battery,
+#custom-power,
+#clock,
+#bluetooth,
+#tray {
+    border-radius: 24px;
+    margin: 2px 3px;
+}
+
+/* Workspace buttons */
 #workspaces button {
     background: @bg;
     color: @text;

@@ -4,6 +4,8 @@
     "hyprland/workspaces",
     "memory",
     "temperature",
+    "custom/web",
+    "custom/file"
   ],
   "modules-center": [
     "tray",
@@ -16,6 +18,18 @@
     "battery",
     "custom/power"
   ],
+  "custom/web": {
+    "format": "<span size='22000' rise='-2500'>󰖟</span>",
+    "tooltip": false,
+    "on-click": "brave-browser",
+    "on-click-right": "vivaldi-stable"
+  },
+  "custom/file": {
+    "format": "<span size='22000' rise='-2500'>󰉋</span>",
+    "tooltip": true,
+    "on-click": "thunar",
+    "on-click-right": "kitty -e ranger"
+  },
   "hyprland/workspaces": {
     "persistent-workspaces": {
       "*": 4
@@ -23,6 +37,9 @@
   },
   "backlight": {
     "format": "<span size='18000' rise='-2500'>󰃝</span> {percent}%",
+  },
+  "clock": {
+    "on-click": "gnome-pomodoro"
   },
   "pulseaudio": {
     "format": "<span size='18000' rise='-2500'>{icon}</span> {volume}%",
@@ -57,10 +74,12 @@
     "icon-size": 18
   },
   "temperature": {
-    "format": "<span size='18000' rise='-2500'></span> {temperatureC}°C"
+    "format": "<span size='18000' rise='-2500'></span> {temperatureC}°C",
+    "on-click": "gnome-system-monitor"
   },
   "battery": {
     "interval": 2,
+    "on-click": "gnome-system-monitor",
     "format": "<span size='18000' rise='-2500'>{icon}</span> {capacity}%",
     "format-charging": "<span size='18000' rise='-2500'>{icon}</span> {capacity}%",
     "format-icons": {
@@ -73,7 +92,7 @@
         "󱊤",
         "󱊥",
         "󱊦"
-      ],
+      ]
     }
   }
 }
