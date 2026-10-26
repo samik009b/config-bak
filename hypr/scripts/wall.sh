@@ -38,7 +38,7 @@ echo "Setting wallpaper to: $WALLPAPER"
 
 pkill -x swaybg 2>/dev/null
 swaybg -i "$WALLPAPER" -m fill &
-
+q
 
 
 

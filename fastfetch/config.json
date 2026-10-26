@@ -8,7 +8,7 @@
       "bottom": 1
     },
     "color": {
-      "1": "cyan"
+      "1": "220"
     }
   },
   "display": {
@@ -21,13 +21,8 @@
     {
       "type": "os",
       "key": "os  ",
-      "keyColor": "red",
+      "keyColor": "yellow",
       "format": "Debian GNU 13"
-    },
-    {
-      "type": "uptime",
-      "key": "up  ",
-      "keyColor": "yellow"
     },
     {
       "type": "shell",
@@ -37,13 +32,13 @@
     {
       "type": "wm",
       "key": "wm  ",
-      "keyColor": "cyan",
+      "keyColor": "yellow",
       "format": "{2}"
     },
     {
       "type": "packages",
       "key": "pkg ",
-      "keyColor": "blue",
+      "keyColor": "red",
       "format": "{dpkg}"
     },
     {
@@ -59,3 +54,4 @@
     }
   ]
 }
+

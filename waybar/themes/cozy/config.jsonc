@@ -1,0 +1,144 @@
+{
+  "position": "top",
+  "modules-left": [
+    "custom/logo",
+    "hyprland/workspaces",
+    "user",
+    "custom/web",
+    "custom/file",
+    "custom/terminal",
+    "custom/obsidian"
+  ],
+  "modules-center": [
+    "clock",
+    "bluetooth",
+    "custom/wifi"
+  ],
+  "modules-right": [
+    "backlight",
+    "pulseaudio",
+    "memory",
+    "temperature",
+    "battery",
+    "custom/power"
+  ],
+  "user": {
+    "format": "· {user} ⏳{work_H}:{work_M} ·",
+    "interval": 60,
+    "icon": true,
+    "avatar": "/home/alice/.face",
+    "height": 24,
+    "width": 24,
+    "open-on-click": true
+  },
+  "custom/obsidian" : {
+    "format": "<span  size='16000' rise='-2500'></span>",
+    "on-click": "obsidian"
+  },
+  "custom/logo": {
+    "format": " <span size='16000' rise='-2500'>🍁 </span>",
+    "tooltip-format": "samikb"
+  },
+  "custom/wifi": {
+    "exec": "~/.config/waybar/scripts/wifi-status.sh",
+    "return-type": "json",
+    "interval": 2,
+    "format": "<span size='18000' rise='-2500'>{icon}</span> {text}",
+    "format-icons": {
+      "enabled": "󰖩",
+      "disabled": "󰖪"
+    },
+    "on-click": "nmcli radio wifi | grep -q enabled && nmcli radio wifi off || nmcli radio wifi on"
+  },
+  "custom/web": {
+    "format": "<span size='22000' rise='-2500'>󰖟</span>",
+    "tooltip": false,
+    "on-click": "brave-browser",
+    "on-click-right": "vivaldi-stable"
+  },
+  "custom/file": {
+    "format": "<span size='22000' rise='-2500'>󰉋</span>",
+    "tooltip": true,
+    "on-click": "thunar",
+    "on-click-right": "kitty -e ranger"
+  },
+  "custom/terminal": {
+    "format": "<span size='22000' rise='-2500'></span>",
+    "tooltip": true,
+    "on-click": "kitty",
+    "on-click-right": "kitty -e ranger"
+  },
+  "hyprland/workspaces": {
+    "persistent-workspaces": {
+      "*": 5
+    }
+  },
+  "backlight": {
+    "format": "<span size='18000' rise='-2500'>󰃝</span> {percent}% ·"
+  },
+  "clock": {
+    "format": "{:%a, %d %b %Y <span size='18000' rise='-2500'>󰥔</span> %H:%M} ·",
+    "tooltip": true,
+    "tooltip-format": "{:%a, %d %B %Y}",
+    "on-click": "gnome-pomodoro",
+    "interval": 60
+  },
+  "pulseaudio": {
+    "format": "<span size='18000' rise='-2500'>{icon}</span> {volume}% ·",
+    "format-muted": "<span size='18000' rise='-2500'>󰝟</span> muted |",
+    "format-icons": {
+      "default": [
+        "󰕿",
+        "󰖀",
+        "󰕾"
+      ]
+    },
+    "scroll-step": 2,
+    "on-click": "pavucontrol",
+    "tooltip": true,
+    "max-volume": 150
+  },
+  "bluetooth": {
+    "format": "<span size='18000' rise='-2500'>󰂯</span> ·",
+    "format-on": "<span size='18000' rise='-2500'>󰂯</span> On ·",
+    "format-disabled": "<span size='18000' rise='-2500'>󰂲</span> Off ·",
+    "format-connected": "<span size='18000' rise='-2500'>󰂱</span> {device_alias} ·",
+    "on-click": "blueman-manager"
+  },
+  "memory": {
+    "interval": 4,
+    "format": "Mem: {percentage}% ·"
+  },
+  "custom/power": {
+    "format": "<span size='20000' rise='-2500'></span> ",
+    "on-click": "~/.config/waybar/scripts/power-menu.sh"
+  },
+  "temperature": {
+    "format": "<span size='18000' rise='-2500'></span> {temperatureC}°C ·",
+    "on-click": "gnome-system-monitor"
+  },
+  "battery": {
+      "states": {
+          "warning": 40,
+          "danger": 25
+      },
+    "interval": 2,
+    "on-click": "gnome-system-monitor",
+    "format": "<span size='18000' rise='-2500'>{icon}</span> {capacity}% ·",
+    "format-charging": "<span size='18000' rise='-2500'>{icon}</span> {capacity}% ·",
+    "format-icons": {
+      "default": [
+        "󱊡",
+        "󱊢",
+        "󱊣"
+      ],
+      "charging": [
+        "󰚥"
+      ]
+    }
+  }
+}
+// Symbol	Meaning
+// 	Terminal window
+// 	Kitty terminal
+// 	Terminal prompt

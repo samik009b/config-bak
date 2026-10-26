@@ -18,3 +18,4 @@ vim.opt.rtp:prepend(
 require("samikb.options")
 require("samikb.keymaps")
 require("samikb.plugins")
+require("samikb.theme")

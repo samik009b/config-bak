@@ -1,0 +1,113 @@
+
+{
+  "layer": "top",
+  "position": "top",
+  "height": 36,
+  "spacing": 5,
+  "margin-top": 6,
+  "margin-bottom": 0,
+  "margin-left": 10,
+  "margin-right": 10,
+
+  "modules-left": [],
+  "modules-center": [
+    "hyprland/workspaces",
+    "backlight",
+    "clock",
+    "custom/power",
+    "bluetooth",
+    "memory",
+    "temperature",
+    "battery",
+    "tray"
+  ],
+  "modules-right": [
+    "wlr/taskbar"
+  ],
+
+  "hyprland/workspaces": {
+    "format": "{name}",
+    "on-click": "activate",
+    "all-outputs": true,
+    "persistent-workspaces": {
+      "*": 5
+    }
+  },
+
+  "hyprland/window": {
+    "format": "{title}",
+    "max-length": 14,
+    "separate-outputs": true
+  },
+
+  "wlr/taskbar": {
+    "format": "{icon}",
+    "icon-size": 22,
+    "icon-theme": "Papirus",
+    "tooltip-format": "{title}",
+    "on-click": "activate",
+    "on-click-middle": "close",
+    "ignore-list": [],
+    "app_ids-mapping": {},
+    "rewrite": {}
+  },
+
+  "clock": {
+    "format": "{:%a %d %b  %H:%M}",
+    "tooltip-format": "<tt>{calendar}</tt>",
+    "calendar": {
+      "mode": "month",
+      "format": {
+        "today": "<b><u>{}</u></b>"
+      }
+    }
+  },
+
+  "tray": {
+    "icon-size": 18,
+    "spacing": 8
+  },
+
+  "backlight": {
+    "format": "<span size='12000'>\uf042 {percent}%</span>",
+    "on-scroll-up": "brightnessctl set 2%+",
+    "on-scroll-down": "brightnessctl set 2%-"
+  },
+
+  "bluetooth": {
+    "format": "<span size='12000'>\uf293</span>",
+    "format-disabled": "<span size='18000'>\uf294</span>",
+    "format-connected": "<span size='12000'>\uf293</span>",
+    "format-connected-battery": "<span size='12000'>\uf293</span>",
+    "tooltip-format": "{controller_alias}\n{status}",
+    "tooltip-format-connected": "{device_enumerate}",
+    "on-click": "blueman-manager"
+  },
+
+  "memory": {
+    "format": "<span size='18000'>\uf2db</span> {percentage}%",
+    "interval": 5
+  },
+
+  "temperature": {
+    "critical-threshold": 60,
+    "format": "<span size='12000'>{temperatureC}°C</span>",
+    "format-critical": "<span size='12000'>\uf2c9 {temperatureC}°C</span>"
+  },
+
+  "battery": {
+    "states": {
+      "warning": 25,
+      "critical": 12
+    },
+    "format": "<span size='12000'>\uf240 {capacity}%</span>",
+    "format-charging": "<span size='12000'>\uf0e7 {capacity}%</span>",
+    "format-plugged": "<span size='12000'>\uf1e6 {capacity}%</span>"
+  },
+
+  "custom/power": {
+    "format": "<span size='18000'>\uf011</span>",
+    "tooltip": false,
+    "on-click": "~/.config/waybar/scripts/power-menu.sh"
+  }
+}

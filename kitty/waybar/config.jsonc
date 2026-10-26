@@ -1,0 +1,98 @@
+{
+  "position": "top",
+  "modules-left": [
+    "hyprland/workspaces",
+    "memory",
+    "temperature",
+    "custom/web",
+    "custom/file"
+  ],
+  "modules-center": [
+    "tray",
+    "clock",
+    "bluetooth",
+  ],
+  "modules-right": [
+    "backlight",
+    "pulseaudio",
+    "battery",
+    "custom/power"
+  ],
+  "custom/web": {
+    "format": "<span size='22000' rise='-2500'>󰖟</span>",
+    "tooltip": false,
+    "on-click": "brave-browser",
+    "on-click-right": "vivaldi-stable"
+  },
+  "custom/file": {
+    "format": "<span size='22000' rise='-2500'>󰉋</span>",
+    "tooltip": true,
+    "on-click": "thunar",
+    "on-click-right": "kitty -e ranger"
+  },
+  "hyprland/workspaces": {
+    "persistent-workspaces": {
+      "*": 4
+    }
+  },
+  "backlight": {
+    "format": "<span size='18000' rise='-2500'>󰃝</span> {percent}%",
+  },
+  "clock": {
+    "on-click": "gnome-pomodoro"
+  },
+  "pulseaudio": {
+    "format": "<span size='18000' rise='-2500'>{icon}</span> {volume}%",
+    "format-muted": "<span size='18000' rise='-2500'>󰝟</span>",
+    "format-icons": {
+      "default": [
+        "󰕿",
+        "󰖀",
+        "󰕾"
+      ]
+    },
+    "scroll-step": 2,
+    "on-click": "pavucontrol",
+    "tooltip": true,
+    "max-volume": 150
+  },
+  "bluetooth": {
+    "format": "<span size='18000'>󰂯</span>",
+    "format-on": "<span size='18000'>󰂯</span>",
+    "format-disabled": "<span size='18000'>󰂲</span>",
+    "format-connected": "<span size='18000' rise='-1500'>󰂱</span> {device_alias}",
+    "on-click": "blueman-manager"
+  },
+  "memory": {
+    "interval": 4
+  },
+  "custom/power": {
+    "format": "<span size='20000' rise='-2500'></span>",
+    "on-click": "~/.config/waybar/scripts/power-menu.sh"
+  },
+  "tray": {
+    "icon-size": 18
+  },
+  "temperature": {
+    "format": "<span size='18000' rise='-2500'></span> {temperatureC}°C",
+    "on-click": "gnome-system-monitor"
+  },
+  "battery": {
+    "interval": 2,
+    "on-click": "gnome-system-monitor",
+    "format": "<span size='18000' rise='-2500'>{icon}</span> {capacity}%",
+    "format-charging": "<span size='18000' rise='-2500'>{icon}</span> {capacity}%",
+    "format-icons": {
+      "default": [
+        "󱊡",
+        "󱊢",
+        "󱊣"
+      ],
+      "charging": [
+        "󱊤",
+        "󱊥",
+        "󱊦"
+      ]
+    }
+  }
+}

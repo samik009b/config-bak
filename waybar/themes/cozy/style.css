@@ -1,0 +1,68 @@
+@define-color bg #2B211A;
+@define-color primary #f4ead8;
+@define-color secondary #dfceb5;
+@define-color muted #b8a58b;
+@define-color accent #edbd78;
+@define-color accent-hover #f5d49b;
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "Fira Code", monospace;
+    font-size: 17px;
+    font-weight: 400;
+    min-height: 0;
+}
+
+#waybar {
+    background: @bg;
+    padding: 10px 8px;
+    /* margin: 0 10px; */
+    /* margin-top: 4px; */
+}
+
+#workspaces button {
+    color: @muted;
+}
+
+#workspaces button.active {
+    font-weight: 800;
+    color: @primary;
+    background: @muted;
+}
+
+#temperature,
+#memory,
+#bluetooth,
+#tray,
+#pulseaudio,
+#backlight,
+#battery,
+#custom-power,
+#custom-wifi,
+#clock,
+#user {
+    padding: 0 6px;
+    color: @accent;
+
+}
+
+#battery.warning {
+    color: greenyellow;
+}
+
+#battery.danger {
+    color: red;
+}
+
+#custom-logo {
+    color: @accent;
+}
+
+#custom-web,
+#custom-file,
+#custom-terminal,
+#custom-obsidian {
+    padding: 0 6px;
+    color: @accent;
+}

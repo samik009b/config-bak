@@ -65,19 +65,19 @@ require("lazy").setup({
 		},
 	},
 
-	-- Themes
-	{
-		"catppuccin/nvim",
-		name = "catppuccin",
-		priority = 1000,
-		config = function()
-			require("catppuccin").setup({
-				flavour = "mocha",
-				transparent_background = true,
-			})
-			vim.cmd.colorscheme("catppuccin")
-		end,
-	},
+	-- -- Themes
+	-- {
+	-- 	"catppuccin/nvim",
+	-- 	name = "catppuccin",
+	-- 	priority = 1000,
+	-- 	config = function()
+	-- 		require("catppuccin").setup({
+	-- 			flavour = "mocha",
+	-- 			transparent_background = true,
+	-- 		})
+	-- 		vim.cmd.colorscheme("catppuccin")
+	-- 	end,
+	-- },
 
 	-- Syntax highlighting
 	{
@@ -224,12 +224,24 @@ require("lazy").setup({
 		config = function()
 			require("lualine").setup({
 				options = {
-					theme = "catppuccin",
+					theme = "gruvbox",
 					globalstatus = true,
 				},
 			})
 		end,
 	},
+	{
+    "ellisonleao/gruvbox.nvim",
+    priority = 1000,
+    config = function()
+        require("gruvbox").setup({
+            transparent_mode = true,
+        })
+
+        vim.o.background = "dark"
+        vim.cmd.colorscheme("gruvbox")
+    end,
+},
 
 	-- Which-key: displays available keybindings
 	{
