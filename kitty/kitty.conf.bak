@@ -3,9 +3,9 @@
 # bold_font        auto
 # italic_font      auto
 # bold_italic_font auto
-font_size        14.0
+font_size        13.0
 
-adjust_line_height -1
+adjust_line_height 1
 
 # Cursor
 cursor_shape     block
@@ -32,44 +32,55 @@ scrollback_lines 10000
 wheel_scroll_multiplier 3.0
 scrollbar scrolled
 
-background #292622
-foreground #F0E7DA
-cursor #C6A77B
-selection_background #C6A77B
-selection_foreground #51483D
+# Autumn Forest — Kitty Colors
 
-color0  #45475a
-color1  #f38ba8
-color2  #a6e3a1
-color3  #f9e2af
-color4  #89b4fa
-color5  #f5c2e7
-color6  #94e2d5
-color7  #bac2de
-color8  #585b70
-color9  #f38ba8
-color10 #a6e3a1
-color11 #f9e2af
-color12 #89b4fa
-color13 #f5c2e7
-color14 #94e2d5
-color15 #a6adc8
+background          #292622
+foreground          #E8DCC8
+cursor               #D9A066
+selection_background #A65E2E
+selection_foreground #FFF1DC
+
+# Normal colors
+color0  #352F29
+color1  #C75B39
+color2  #89945A
+color3  #D5A44D
+color4  #A87952
+color5  #B47A68
+color6  #7F9990
+color7  #D8CBB6
+
+# Bright colors
+color8  #62564A
+color9  #E07850
+color10 #A5AD6B
+color11 #E8BC69
+color12 #C29268
+color13 #CE9580
+color14 #A0B2A0
+color15 #F0E7DA
 
 # Tabs
 tab_bar_edge bottom
 tab_bar_style powerline
-active_tab_foreground #1e1e2e
-active_tab_background #cba6f7
-inactive_tab_foreground #cdd6f4
-inactive_tab_background #313244
+
+active_tab_foreground #292622
+active_tab_background #D5A44D
+
+inactive_tab_foreground #B9AA96
+inactive_tab_background #3A332C
 
 # Performance
 repaint_delay 8
 input_delay 3
+# font_family Victor Mono 
+# bold_font auto
+# italic_font auto
+# bold_italic_font auto
 
 
 # BEGIN_KITTY_FONTS
-font_family      family="Hack"
+font_family      family="Noto Mono"
 bold_font        auto
 italic_font      auto
 bold_italic_font auto

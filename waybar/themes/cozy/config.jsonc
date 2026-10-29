@@ -23,7 +23,7 @@
     "custom/power"
   ],
   "user": {
-    "format": "· {user} ⏳{work_H}:{work_M} ·",
+    "format": "· {user}  󰞌 {work_H}:{work_M} ·",
     "interval": 60,
     "icon": true,
     "avatar": "/home/alice/.face",
@@ -31,19 +31,19 @@
     "width": 24,
     "open-on-click": true
   },
-  "custom/obsidian" : {
-    "format": "<span  size='16000' rise='-2500'></span>",
+  "custom/obsidian": {
+    "format": "",
     "on-click": "obsidian"
   },
   "custom/logo": {
-    "format": " <span size='16000' rise='-2500'>🍁 </span>",
+    "format": " 🍁 ",
     "tooltip-format": "samikb"
   },
   "custom/wifi": {
     "exec": "~/.config/waybar/scripts/wifi-status.sh",
     "return-type": "json",
     "interval": 2,
-    "format": "<span size='18000' rise='-2500'>{icon}</span> {text}",
+    "format": "{icon} {text}",
     "format-icons": {
       "enabled": "󰖩",
       "disabled": "󰖪"
@@ -51,19 +51,19 @@
     "on-click": "nmcli radio wifi | grep -q enabled && nmcli radio wifi off || nmcli radio wifi on"
   },
   "custom/web": {
-    "format": "<span size='22000' rise='-2500'>󰖟</span>",
+    "format": "󰖟",
     "tooltip": false,
     "on-click": "brave-browser",
     "on-click-right": "vivaldi-stable"
   },
   "custom/file": {
-    "format": "<span size='22000' rise='-2500'>󰉋</span>",
+    "format": "󰉋",
     "tooltip": true,
     "on-click": "thunar",
     "on-click-right": "kitty -e ranger"
   },
   "custom/terminal": {
-    "format": "<span size='22000' rise='-2500'></span>",
+    "format": "",
     "tooltip": true,
     "on-click": "kitty",
     "on-click-right": "kitty -e ranger"
@@ -74,18 +74,18 @@
     }
   },
   "backlight": {
-    "format": "<span size='18000' rise='-2500'>󰃝</span> {percent}% ·"
+    "format": "󰃝 {percent}% ·"
   },
   "clock": {
-    "format": "{:%a, %d %b %Y <span size='18000' rise='-2500'>󰥔</span> %H:%M} ·",
+    "format": "{:%a, %d %b %Y 󰥔 %H:%M} ·",
     "tooltip": true,
     "tooltip-format": "{:%a, %d %B %Y}",
     "on-click": "gnome-pomodoro",
     "interval": 60
   },
   "pulseaudio": {
-    "format": "<span size='18000' rise='-2500'>{icon}</span> {volume}% ·",
-    "format-muted": "<span size='18000' rise='-2500'>󰝟</span> muted |",
+    "format": "{icon} {volume}% ·",
+    "format-muted": "󰝟 muted ·",
     "format-icons": {
       "default": [
         "󰕿",
@@ -99,33 +99,33 @@
     "max-volume": 150
   },
   "bluetooth": {
-    "format": "<span size='18000' rise='-2500'>󰂯</span> ·",
-    "format-on": "<span size='18000' rise='-2500'>󰂯</span> On ·",
-    "format-disabled": "<span size='18000' rise='-2500'>󰂲</span> Off ·",
-    "format-connected": "<span size='18000' rise='-2500'>󰂱</span> {device_alias} ·",
+    "format": "󰂯 ·",
+    "format-on": "󰂯 On ·",
+    "format-disabled": "󰂲 Off ·",
+    "format-connected": "󰂱 {device_alias} ·",
     "on-click": "blueman-manager"
   },
   "memory": {
-    "interval": 4,
+    "interval": 2,
     "format": "Mem: {percentage}% ·"
   },
   "custom/power": {
-    "format": "<span size='20000' rise='-2500'></span> ",
-    "on-click": "~/.config/waybar/scripts/power-menu.sh"
+    "format": " ",
+    "on-click": "wlogout"
   },
   "temperature": {
-    "format": "<span size='18000' rise='-2500'></span> {temperatureC}°C ·",
+    "format": " {temperatureC}°C ·",
     "on-click": "gnome-system-monitor"
   },
   "battery": {
-      "states": {
-          "warning": 40,
-          "danger": 25
-      },
-    "interval": 2,
+    "states": {
+      "warning": 40,
+      "danger": 25
+    },
+    "interval": 1,
     "on-click": "gnome-system-monitor",
-    "format": "<span size='18000' rise='-2500'>{icon}</span> {capacity}% ·",
-    "format-charging": "<span size='18000' rise='-2500'>{icon}</span> {capacity}% ·",
+    "format": "{icon} {capacity}% ·",
+    "format-charging": "{icon} {capacity}% ·",
     "format-icons": {
       "default": [
         "󱊡",

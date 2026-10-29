@@ -1,0 +1,263 @@
+/* ─────────────────────────────────────────────
+   Waybar — floating pill bar (Catppuccin Mocha)
+   Requires a Nerd Font (e.g. JetBrainsMono Nerd Font)
+   ───────────────────────────────────────────── */
+
+@define-color base #1e1e2e;
+@define-color mantle #181825;
+@define-color crust #11111b;
+@define-color surface0 #313244;
+@define-color surface1 #45475a;
+@define-color text #cdd6f4;
+@define-color subtext #a6adc8;
+@define-color overlay #6c7086;
+
+@define-color rosewater #f5e0dc;
+@define-color pink #f5c2e7;
+@define-color mauve #cba6f7;
+@define-color red #f38ba8;
+@define-color peach #fab387;
+@define-color yellow #f9e2af;
+@define-color green #a6e3a1;
+@define-color teal #94e2d5;
+@define-color sky #89dceb;
+@define-color blue #89b4fa;
+@define-color lavender #b4befe;
+
+* {
+    font-family: "JetBrainsMono Nerd Font", "Symbols Nerd Font", "Inter", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/* The bar itself is transparent so the pills float */
+window#waybar {
+    background: transparent;
+    color: @text;
+}
+
+tooltip {
+    background: alpha(@mantle, 0.95);
+    border: 1px solid @surface1;
+    border-radius: 12px;
+}
+
+tooltip label {
+    color: @text;
+    padding: 4px 6px;
+}
+
+/* ───── Shared pill styling ───── */
+#custom-launcher,
+#workspaces,
+#window,
+#clock,
+#tray,
+#pulseaudio,
+#backlight,
+#network,
+#bluetooth,
+#cpu,
+#memory,
+#battery,
+#custom-power {
+    background: alpha(@base, 0.88);
+    color: @text;
+    border: 1px solid alpha(@surface1, 0.55);
+    border-radius: 14px;
+    padding: 0 14px;
+    margin: 2px 3px;
+    transition: all 0.25s ease;
+}
+
+/* Hover lift */
+#custom-launcher:hover,
+#pulseaudio:hover,
+#backlight:hover,
+#network:hover,
+#bluetooth:hover,
+#cpu:hover,
+#memory:hover,
+#battery:hover,
+#clock:hover,
+#custom-power:hover {
+    background: alpha(@surface0, 0.95);
+    border-color: alpha(@mauve, 0.6);
+}
+
+/* ───── Left ───── */
+#custom-launcher {
+    font-size: 18px;
+    color: @blue;
+    padding: 0 16px 0 14px;
+    margin-left: 0;
+    background: alpha(@base, 0.88);
+}
+
+#workspaces {
+    padding: 0 6px;
+}
+
+#workspaces button {
+    color: @overlay;
+    background: transparent;
+    border-radius: 10px;
+    padding: 0 7px;
+    margin: 4px 2px;
+    font-size: 12px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#workspaces button:hover {
+    color: @text;
+    background: alpha(@surface1, 0.7);
+    box-shadow: none;
+    text-shadow: none;
+}
+
+#workspaces button.active {
+    color: @crust;
+    background: linear-gradient(135deg, @mauve, @blue);
+    padding: 0 12px;
+}
+
+#workspaces button.urgent {
+    color: @crust;
+    background: @red;
+    animation: urgent-blink 1s steps(2, start) infinite;
+}
+
+#workspaces button.empty {
+    color: alpha(@overlay, 0.6);
+}
+
+#window {
+    color: @subtext;
+    font-weight: 500;
+    padding: 0 16px;
+}
+
+window#waybar.empty #window {
+    background: transparent;
+    border-color: transparent;
+}
+
+/* ───── Center ───── */
+#clock {
+    color: @lavender;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 0 20px;
+    border-color: alpha(@lavender, 0.35);
+}
+
+/* ───── Right ───── */
+#tray {
+    padding: 0 10px;
+}
+
+#tray>.passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray>.needs-attention {
+    -gtk-icon-effect: highlight;
+    background: alpha(@red, 0.3);
+    border-radius: 8px;
+}
+
+#pulseaudio {
+    color: @pink;
+}
+
+#backlight {
+    color: @yellow;
+}
+
+#network {
+    color: @teal;
+}
+
+#bluetooth {
+    color: @blue;
+}
+
+#cpu {
+    color: @green;
+}
+
+#memory {
+    color: @peach;
+}
+
+#battery {
+    color: @green;
+}
+
+#pulseaudio.muted {
+    color: @overlay;
+}
+
+#network.disconnected {
+    color: @red;
+}
+
+#bluetooth.off,
+#bluetooth.disabled {
+    color: @overlay;
+}
+
+#bluetooth.connected {
+    color: @sky;
+}
+
+#cpu.warning,
+#memory.warning,
+#battery.warning:not(.charging) {
+    color: @yellow;
+}
+
+#cpu.critical,
+#memory.critical {
+    color: @red;
+}
+
+#battery.good:not(.charging) {
+    color: @green;
+}
+
+#battery.charging,
+#battery.plugged {
+    color: @teal;
+}
+
+#battery.critical:not(.charging) {
+    color: @red;
+    animation: urgent-blink 1s steps(2, start) infinite;
+}
+
+#custom-power {
+    color: @red;
+    font-size: 15px;
+    padding: 0 14px 0 14px;
+    margin-right: 0;
+}
+
+#custom-power:hover {
+    background: @red;
+    color: @crust;
+    border-color: @red;
+}
+
+/* ───── Animations ───── */
+@keyframes urgent-blink {
+    to {
+        background-color: alpha(@red, 0.25);
+        color: @red;
+    }
+}
