@@ -43,3 +43,5 @@ source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Syntax highlighting — keep this last
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+cd ~

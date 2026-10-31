@@ -19,7 +19,7 @@ initial_window_width 110c
 initial_window_height 32c
 window_padding_width 12
 hide_window_decorations no
-background_opacity 0.75
+background_opacity 0.55
 background_blur 1
 
 # Shell
@@ -80,7 +80,7 @@ input_delay 3
 
 
 # BEGIN_KITTY_FONTS
-font_family      family="Noto Mono"
+font_family      family="Fira Code"
 bold_font        auto
 italic_font      auto
 bold_italic_font auto

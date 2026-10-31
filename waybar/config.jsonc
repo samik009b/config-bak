@@ -42,7 +42,7 @@
   "custom/wifi": {
     "exec": "~/.config/waybar/scripts/wifi-status.sh",
     "return-type": "json",
-    "interval": 2,
+    "interval": 1,
     "format": "{icon} {text}",
     "format-icons": {
       "enabled": "󰖩",
